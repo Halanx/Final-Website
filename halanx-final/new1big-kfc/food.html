@@ -1,0 +1,310 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" >
+	<link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+	<link rel="stylesheet" href="style.css">
+	<script src="libs/angular.min.js"></script>
+	<script src="foodjs/module.js"></script>
+	<script src="foodjs/factory.js"></script>
+	<script src="foodjs/controller.js"></script>
+         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
+        
+	</head>
+
+
+	<body ng-app="myapp" ng-controller="myctrl" data-spy="scroll" data-target="#myScrollspy">
+
+    <!---------------------->
+    <!--Navbar Starts Here-->
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- add header -->
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-bg" href="../../../index.html">
+                    <img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png" class="img-responsive" width="50" height="50"><span id="brand-name">Halanx</span>
+                </a>
+            </div>
+            <!-- menu items -->
+            <!--<div  id="navbar1" style="margin-top:0px">-->
+                <ul class="nav login_ctrl navbar-nav navbar-right">
+                    <a href="../../../halanx-final/new1big-kfc/frontpage/login.html" class="btn-md pull-right" id="login-btn">LOGOUT</a>
+                </ul>
+            <!--</div>-->
+        </div>
+    </nav>
+    <!--Navbar Ends-->
+    
+    <!------------------------------>
+    <!--Search Product Starts Here-->
+    <div class="container-fluid">
+        <div id="search-wrapper" class="row">
+            <h3>Search your products</h3>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div id="searchbox-wrapper">
+                    <input type="text" class="form-control" placeholder="Search your products" ng-change="search()" ng-model="enter">
+                     <ul>
+                        <li ng-repeat="i in listdata" data-toggle="modal" data-target="#exampleModalLong" ng-click="getsearch(i)">
+                            <a href="">{{i._source.ProductName}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <!--Search Store Ends-->
+        
+    <!--------------------------->
+    <!--Shopping In starts here-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4" id="shopping-in">
+                <!--
+                <div class="delivery-option">
+                    <ul>
+                        <li>
+                            <a href="" ng-click="addstore()">shopping in</a>
+                            <div class="storelist" ng-class={"show":showclass}>
+                                <ul>
+                                    <li ng-repeat="store in storedata" ng-click="mystore(store.id)">
+                                        <a href="">{{store.StoreName}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                <div class="datalogo">
+                    <img ng-src="{{StoreLogo}}" alt="">
+                </div>
+                <span class="storename">{{StoreName}}</span>
+            </div>
+            <div class="col-sm-8">
+                 <div class="productcat scrollmenu" >
+                      <ul>
+                          <li ng-repeat="i in productcat" ng-click="catwise(i)" class="category">
+                              {{i}}
+                          </li>
+                      </ul>
+                  </div>
+            </div>
+        </div>    
+    </div>
+    <!--Shopping In ends-->
+        
+        <br>
+        <br><br>
+                
+	                      
+	 <div id="content" name="toTop" id="toPos">
+	           <div class="container-fluid bg22" name="toTop" id="toPos">
+	               <div class="row">
+	                   <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+	                       <div class="nav-button" ng-hide="menu">
+	                           <span ng-click="addsidebar()" class="sidebutton"  ng-hide="menu">
+	                               <i class="fa fa-bars" aria-hidden="true" onclick="tg()"></i>
+	                         </span>
+	                       </div>
+	                       <div class="userlist" ng-class={"move":movex}>
+	                        <ul>
+	                            <li><a href="https://www.halanx.com/halanx-final/new1big-kfc/account/account.html">My Accounts</a></li>
+	                            <li><a href="https://www.halanx.com/halanx-final/new1big-kfc/orders/orders1.html">My Orders</a></li>
+	                            <li><a href="https://www.halanx.com/halanx-final/new1big-kfc/favourites/fav1.html">Favourites</a></li>
+	                            <li><a href="">Points</a></li>
+	                            <li><a href="">Notification</a></li>
+	                            <li><a href="https://www.halanx.com">Logout</a></li>
+	                            
+	                        </ul>
+	                       </div>
+	                   </div>
+	                       <div class="cart-icon">
+	                          <a href="cart.html">
+	                         <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	<span ng-model = "counter" class="testt">{{counter}}</span>
+	                           </button>
+	                           </a>
+	                       </div>
+	               </div>
+	               <div class="row">
+	                   <div class="col-sm-12">
+	                       <div class="datalist">
+	 
+	<div class="datasection">
+
+	   
+	    <div class="productmain">
+	       
+	        <ul>
+	            <li ng-repeat="data in mydata" $parent.quantity= quantity data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+	           
+	             <div class="product" >   
+	<!--
+	             <div class="productimage" >
+	             <img ng-src="{{data.ProductImage}}"> 
+
+	              </div>
+	-->
+	              <div class="productdescription">
+	                  <span class="productname">{{data.ProductName}}</span>
+	                   
+	                <div class="row row_feature">
+	                  <span class="productfeature">{{data.Features}}</span>
+	                  </div>
+	                  <br>
+	                  <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span>
+	                   <img src="images/Like-48%20(1).png"  ng-click="addfav(data)"   ng-class={"red":data.FavoriteField}  style="width:10%; visibility: hidden">
+                      <span class="glyphicon fav-icon" ng-click="addfav(data)"  ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span>
+<!-- <span class="	glyphicon glyphicon-heart fav-icon"></span>-->
+
+	                   <div class="counter-cart">
+	                       
+	                        <button ng-click="quantity = quantity-1" ng-disabled="quantity==1" class="btn btn-sm btn-danger btn-circle b22"><i class="glyphicon glyphicon-minus"></i></button>
+
+	                        <span  class="test" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+	                        <button ng-click="quantity = quantity+1" class="btn btn-danger btn-sm btn-circle b33" ><i class="glyphicon glyphicon-plus"></i></button>
+	         
+
+	                  
+	                         <button type="button" class="btn btn-md btn-danger b1" ng-click="addtocart(data,quantity)">Add to Cart</button>
+	              </div>
+	              </div>
+	              
+	              </div>
+	                            
+	               
+	            </li>
+	        </ul>
+
+	    </div>
+
+	</div>
+	 
+	</div>
+	                   </div>
+	               </div>
+	               
+	               
+	               
+	</div>
+	       </div>
+
+
+
+	<!---------------------->
+    <!--Footer Starts Here-->
+    <footer class="container-fluid bg3">
+        <div class="row row_11">
+            <div class="col-md-3"></div>
+            <div class="col-md-1   text-center"><a href="../../../aboutus.html">About Us</a></div>
+            <div class="col-md-1  text-center"><a href="#">Careers</a></div>
+            <div class="col-md-1  text-center"><a href="#">Blog</a></div>
+            <div class="col-md-1  text-center"><a href="../../../contactus.html">Contact Us</a></div>
+            <div class="col-md-1  text-center"><a href="../../../privacy.html">Privacy</a></div>
+            <div class="col-md-1  text-center"><a href="../../../terms.html">Terms</a></div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row row_13">
+            <div class="text-center center-block">
+                <a href="https://www.facebook.com/halanxtech"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i> .</a>
+                <a href="https://www.twitter.com/halanxtech"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i> .</a>
+                <a href="https://www.instagram.com/halanxtech"><i id="social-gp" class="fa fa-instagram fa-2x social"></i> .</a>
+                <a href="https://in.linkedin.com/company/halanx"><i id="social-tw" class="fa fa-linkedin-square fa-2x social"></i></a>
+            </div>
+        </div>
+        
+        <div class="row row_12">
+            <p>&copy; Halanx 2017</p>
+        </div>
+    </footer>
+    <!--Footer Ends-->
+
+
+	   
+	    
+	</body>
+	<script>
+	$(function(){
+
+
+	var stickyElement   = '.panel-affix',    
+	bottomElement   = '#fake-footer';  
+
+	if($( stickyElement ).length){
+	$( stickyElement ).each(function(){
+
+	   
+	  var fromTop = $( this ).offset().top, 
+	    
+	    fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+	    
+	    stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+
+	   
+	  if( (fromBottom-stopOn) > 200 ){
+	     
+	    $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+	     
+	    $( this ).affix({
+	      offset: { 
+	        
+	        top: fromTop - 80,  
+	         
+	        bottom: stopOn
+	      }
+	    
+	    }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
+	  }
+	  
+	  $( window ).trigger('scroll'); 
+	}); 
+	}
+
+	});
+
+
+	$('body').scrollspy({
+	offset: 80
+	});
+
+
+	$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	var target = $(this.hash);
+	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	if (target.length) {
+	$('html,body').animate({
+	  scrollTop: target.offset().top
+	}, 1000);
+	return false;
+	}
+	}
+	});
+	});
+        
+        tga = false;
+function tg() {
+    
+    if(!tga) {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        tga = true;
+    } else {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        tga = false;
+    }
+}
+    
+	</script>
+	</html>
