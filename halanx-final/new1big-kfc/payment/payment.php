@@ -88,6 +88,9 @@ function submitPayuForm() {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <link rel="stylesheet" href="style.css">
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
 <script src="../libs/angular.min.js"></script>
 
 <script>
@@ -219,28 +222,41 @@ document.getElementById('amount').value=amount;
 
  
 <nav class="navbar navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-      <!-- add header -->
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../../../index.html"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png" class="img-responsive img-circle" width="50" height="50"> </a>
-          <a class="navbar-brand navbar-bg" href="../../../index.html">Halanx</a>
-      </div>
-       
-       
-  </div>
-</nav>
+        <div class="container-fluid">
+            
+            <!-- add header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-bg" href="index.html">
+                    <img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png" class="img-responsive" width="50" height="50"><span id="brand-name">Halanx</span>
+                </a>
+            </div>
+            
+            <!-- menu items -->
+<!--            <div class="collapse navbar-collapse" id="navbar1">-->
+                <ul class="login_ctrl nav navbar-nav navbar-right">
+                    <a href="halanx-final/new1big-kfc/frontpage/login.html" class="btn-md pull-right" id="login-btn">LOGIN</a>
+                </ul>
+<!--            </div>-->
+            
 
-
+        </div>
+    </nav>
 <div id="content">
   <div class="container-fluid bg1" name="toTop" id="toPos">
       <div class="row">
+            
            <div class="col-md-4 col-md-offset-4 col-sm-6">
+           <div class="panel panel-default">
+           <div class="panel-heading">
+           <h4 class="heading">Select the Payment Method</h4>
+           </div>
+           <div class="panel-body">
              <div class="payment">
              <ul>
              <li>
@@ -260,35 +276,37 @@ document.getElementById('amount').value=amount;
   </div>
 </div>
 </div>
-
-
-      <div class="container-fluid bg3">
- <div class="row row_11">
-   <div class="col-md-2   text-center"><a href="../../aboutus.html">About Us</a></div>
-   <div class="col-md-2  text-center"><a href="#">Careers</a></div>
-   <div class="col-md-2  text-center"><a href="#">Blog</a></div>
-   <div class="col-md-2  text-center"><a href="../../contactus.html">Contact Us</a></div>
-   <div class="col-md-2  text-center"><a href="../../privacy.html">Privacy</a></div>
-   <div class="col-md-2 text-center"><a href="../../terms.html">Terms</a></div>
- </div>
-
- <div class="row row_13">
-   <div class="text-center center-block">
-        <a href="https://www.facebook.com/halanxtech"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
-      <a href="https://www.twitter.com/halanxtech"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
-      <a href="https://www.instagram.com/halanxtech"><i id="social-gp" class="fa fa-instagram fa-2x social"></i></a>
-      <a href="https://in.linkedin.com/company/halanx"><i id="social-tw" class="fa fa-linkedin-square fa-2x social"></i></a>
-    
-   </div>
- </div>
-
- <div class="row row_12">
-   <span class="glyphicon glyphicon-copyright-mark"> Halanx 2017 </span>
- </div>
+</div>
 </div>
 
-   </div>
-   </div>
+
+       <footer class="container-fluid bg3">
+        <div class="row row_11">
+            <div class="col-md-3"></div>
+            <div class="col-md-1   text-center"><a href="aboutus.html">About Us</a></div>
+            <div class="col-md-1  text-center"><a href="#">Careers</a></div>
+            <div class="col-md-1  text-center"><a href="#">Blog</a></div>
+            <div class="col-md-1  text-center"><a href="contactus.html">Contact Us</a></div>
+            <div class="col-md-1  text-center"><a href="privacy.html">Privacy</a></div>
+            <div class="col-md-1  text-center"><a href="terms.html">Terms</a></div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row row_13">
+            <div class="text-center center-block">
+                <a href="https://www.facebook.com/halanxtech"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i> .</a>
+                <a href="https://www.twitter.com/halanxtech"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i> .</a>
+                <a href="https://www.instagram.com/halanxtech"><i id="social-gp" class="fa fa-instagram fa-2x social"></i> .</a>
+                <a href="https://in.linkedin.com/company/halanx"><i id="social-tw" class="fa fa-linkedin-square fa-2x social"></i>.</a>
+                <a href="https://www.pinterest.com/halanxtech"><i id="social-gp" class="fa fa-pinterest-square fa-2x social"></i></a>
+            </div>
+        </div>
+                
+        <div class="row row_12">
+            <p>&copy; Halanx 2017</p>
+        </div>
+    </footer>
+    
 </body>
 <script>
 $(function(){
