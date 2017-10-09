@@ -103,8 +103,8 @@ var app = angular.module("myapp",[]);
            var json =  localStorage.getItem("Address");
            var splitaddress = JSON.parse(json)
            obj.DeliveryAddress =splitaddress.Flatno+ ","+splitaddress.Area +","+splitaddress.city
-             obj.AsSoonAsPossible =  localStorage.getItem("AsSoonAsPossible");
-            obj.StartTime = localStorage.getItem("StartTime");
+           obj.AsSoonAsPossible =  localStorage.getItem("AsSoonAsPossible");
+           obj.StartTime = localStorage.getItem("StartTime");
 //                    localStorage.getItem("StartTime");
            var destination = localStorage.getItem("obj");
            var latlon = JSON.parse(destination)
@@ -112,17 +112,43 @@ var app = angular.module("myapp",[]);
            obj.Longitude = latlon.Longitude;
            console.log(obj)
            var token = myfactory.gettoken();
-          var promise =  myfactory.placeorder(obj,token);
+           var promise =  myfactory.placeorder(obj,token);
            promise.then(function(data){
-    console.log(data)
+    	   console.log(data)
+//       $scope.storedata = data;
+//        console.log($scope.storedata);
+         $window.location.href="https://www.halanx.com/halanx-final/new1big-kfc/frontpage/index1.html";
+    
+  },function(err){
+     
+} );
+       },
+       $scope.postorder1 = ()=>{
+           
+           var obj = {};
+           obj.DeliveryDate = localStorage.getItem("DeliveryDate");
+           var json =  localStorage.getItem("Address");
+           var splitaddress = JSON.parse(json)
+           obj.DeliveryAddress =splitaddress.Flatno+ ","+splitaddress.Area +","+splitaddress.city
+           obj.AsSoonAsPossible =  localStorage.getItem("AsSoonAsPossible");
+           obj.StartTime = localStorage.getItem("StartTime");
+//                    localStorage.getItem("StartTime");
+           var destination = localStorage.getItem("obj");
+           var latlon = JSON.parse(destination)
+           obj.Latitude = latlon.Latitude;
+           obj.Longitude = latlon.Longitude;
+           console.log(obj)
+           var token = myfactory.gettoken();
+           var promise =  myfactory.placeorder(obj,token);
+           promise.then(function(data){
+    	   console.log(data)
 //       $scope.storedata = data;
 //        console.log($scope.storedata);
     
     
   },function(err){
      
-} );
-       } 
+} ); 
     })
     app.factory("myfactory",($http,$q)=>{
        var object = {
@@ -267,7 +293,7 @@ document.getElementById('amount').value=amount;
 
                <li>
                   <?php if(!$hash) { ?>
-                   <input type="submit"  value="Credit/Debit Card" class="btn btn-lg btn-default" ng-click="postorder()"/>  
+                   <input type="submit"  value="Credit/Debit Card" class="btn btn-lg btn-default" ng-click="postorder1()"/>  
                   <?php } ?>
                   </li>
               </div>
